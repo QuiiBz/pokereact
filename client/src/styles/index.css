@@ -1,0 +1,23 @@
+body {
+
+    margin: 0;
+    background: rgb(135,128,99);
+    background: linear-gradient(135deg, rgba(135,128,99,1) 0%, rgba(201,187,128,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial;
+}
+
+html {
+
+    height: 100%;
+}
+
+#root {
+
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
