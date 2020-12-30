@@ -1,18 +1,15 @@
 import { Component } from 'react';
-import Pokemon from '../Pokemon';
+import Pokemon from '../components/Pokemon';
 
 class ListPokemonsPage extends Component {
 
     componentDidMount() {
 
-        fetch('http://localhost:4000/pokemons').then((response) => {
+        fetch('http://localhost:4242/pokemons').then((response) => {
 
-            response.json().then((json) => {
+            response.json().then((pokemons) => {
 
-                this.setState({
-
-                    pokemons: json,
-                });
+                this.setState({ pokemons });
             });
         });
     }
@@ -29,7 +26,7 @@ class ListPokemonsPage extends Component {
             )
 
         } else
-            return <h1>Pokemons entrain de charger</h1>
+            return <h1>Pokemons entrain de charger</h1>;
     }
 }
 

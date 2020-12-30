@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import CurrentPokemon from '../CurrentPokemon';
+import CurrentPokemon from '../components/CurrentPokemon';
 import { withRouter } from 'react-router';
 import '../styles/currentPokemon.css';
 
@@ -9,14 +9,11 @@ class PokemonPage extends Component {
 
         const id = this.props.match.params.id;
 
-        fetch(`http://localhost:4000/pokemons/${id}`).then((response) => {
+        fetch(`http://localhost:4242/pokemons/${id}`).then((response) => {
 
-            response.json().then((json) => {
+            response.json().then((pokemon) => {
 
-                this.setState({
-
-                    pokemon: json,
-                });
+                this.setState({ pokemon });
             });
         });
     }
@@ -26,7 +23,7 @@ class PokemonPage extends Component {
         if(this.state)
             return <CurrentPokemon pokemon={this.state.pokemon} />;
         else
-            return <h1>Pokemon entrain de charger</h1>
+            return <h1>Pokemon entrain de charger</h1>;
     }
 }
 
