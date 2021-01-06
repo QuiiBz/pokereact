@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React,{ Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class CurrentPokemon extends Component {
@@ -6,6 +6,7 @@ class CurrentPokemon extends Component {
     render() {
 
         return (
+            <React.Fragment>
             <div className='current-pokemon'>
                 <img src={'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/' + this.props.pokemon.ndex + '.png'} />
                 <p className='name'>{ this.props.pokemon.nom }</p>
@@ -25,8 +26,10 @@ class CurrentPokemon extends Component {
                         <p>Nom TM: <span>{ this.props.pokemon.nomtm }</span></p>
                         <p>Nom JA: <span>{ this.props.pokemon.nomja }</span></p>
                     </div>
-                </div>
-                <div className='boxs'>
+                    </div>
+                    <h3>Les Attaques</h3>
+                    <div className='boxs two'>
+                       
                     {
                         this.props.pokemon.attaques.map((attack) => {
 
@@ -45,7 +48,9 @@ class CurrentPokemon extends Component {
                 <Link to="/">
                     <button className='back'>Retour à la liste des pokemons</button>
                 </Link>
-            </div>
+                    </div>
+            
+            </React.Fragment>
         )
     }
 }

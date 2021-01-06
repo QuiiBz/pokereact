@@ -1,23 +1,31 @@
 body {
-
     margin: 0;
-    background: rgb(135,128,99);
-    background: linear-gradient(135deg, rgba(135,128,99,1) 0%, rgba(201,187,128,1) 100%);
+    background-image: linear-gradient(25deg, #179b69, #7a9f6a, #b4a16a, #e8a06b);
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: Arial;
 }
 
 html {
-
     height: 100%;
 }
 
-#root {
 
+/*List Pokemon*/
+
+#title {
+    font-size: 5rem;
+    text-align: center;
+    font-family: 'Bungee Outline', cursive;
+    color: white;
+}
+
+.pokemonList {
     width: 80vw;
     margin: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    position: relative;
+    left: 90px;
 }
