@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import Pokemon from '../components/Pokemon';
 
 class ListPokemonsPage extends Component {
@@ -19,10 +19,15 @@ class ListPokemonsPage extends Component {
         if(this.state) {
 
             return (
-                this.state.pokemons.map((pokemon) => {
+                <React.Fragment>
+                    <h1 id="title">Nos Pokemons</h1>
+                    <div className="pokemonList">
+                    {this.state.pokemons.map((pokemon) => {
 
-                    return <Pokemon data={pokemon} key={pokemon.nom} />;
-                })
+                        return <Pokemon data={pokemon} key={pokemon.nom} />;
+                    })}
+                    </div>
+                </React.Fragment>
             )
 
         } else
